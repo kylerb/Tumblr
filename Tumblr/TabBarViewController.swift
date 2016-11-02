@@ -13,6 +13,7 @@ var searchViewController: UIViewController!
 var accountViewController: UIViewController!
 var trendingViewController: UIViewController!
 var viewControllers: [UIViewController]!
+
 var selectedIndex: Int = 0
 
 class TabBarViewController: UIViewController {
@@ -21,12 +22,17 @@ class TabBarViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet var buttons: [UIButton]!
     
+    override func  viewWillAppear(_ animated: Bool) {
+        
+    }
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
         homeViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController")
         searchViewController = storyboard.instantiateViewController(withIdentifier: "SearchViewController")
         accountViewController = storyboard.instantiateViewController(withIdentifier: "AccountViewController")
@@ -40,23 +46,23 @@ class TabBarViewController: UIViewController {
         
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
     
     @IBAction func didPressTab(_ sender: UIButton) {
         let previousIndex = selectedIndex

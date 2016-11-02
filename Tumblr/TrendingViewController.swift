@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TrendingViewController: UIViewController {
+class TrendingViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -17,7 +17,8 @@ class TrendingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        scrollView.contentSize = CGSize(width: 320, height: 1217)
+        scrollView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
