@@ -83,9 +83,10 @@ class TabBarViewController: UIViewController {
         vc.didMove(toParentViewController: self)
         print("Tag: \(selectedIndex)")
         
-        
-        
     }
+    
+    
+    
     
     
 }

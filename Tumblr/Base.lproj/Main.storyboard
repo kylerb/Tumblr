@@ -64,7 +64,7 @@
         <scene sceneID="V1z-0V-OHT">
             <objects>
                 <viewController storyboardIdentifier="ComposeViewController" id="YeY-ku-07Z" customClass="ComposeViewController" customModule="Tumblr" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" alpha="0.81999999999999995" contentMode="scaleToFill" id="s9p-T7-xZM">
+                    <view key="view" contentMode="scaleToFill" id="s9p-T7-xZM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -93,9 +93,14 @@
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bwH-VE-JM1">
-                                <frame key="frameInset" minY="480" width="320" height="44"/>
+                                <frame key="frameInset" minY="407" width="320" height="117"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Nevermind"/>
+                                <state key="normal" title="Nevermind">
+                                    <color key="titleColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressNevermind:" destination="YeY-ku-07Z" eventType="touchUpInside" id="qjq-x8-FpG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.15294117647058825" green="0.19607843137254902" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
@@ -103,10 +108,13 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="524"/>
+                    <connections>
+                        <outlet property="nevermindButton" destination="bwH-VE-JM1" id="M8p-FC-pd2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aKo-Ev-Rjv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="678" y="957"/>
+            <point key="canvasLocation" x="680" y="1637"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="aeL-0H-Ju0">
@@ -148,6 +156,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
+                                <color key="backgroundColor" red="0.15294117647058825" green="0.21176470588235294" blue="0.29019607843137257" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -169,7 +178,7 @@
             <objects>
                 <viewController id="XJ8-az-yhR" userLabel="TabBarViewController" customClass="TabBarViewController" customModule="Tumblr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bgd-Cn-g00">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" id="zIh-E0-GAs" userLabel="tabBarView">
@@ -200,6 +209,7 @@
                                         <state key="normal" image="compose_button"/>
                                         <connections>
                                             <action selector="didPressTab:" destination="XJ8-az-yhR" eventType="touchUpInside" id="a3K-Yn-6hE"/>
+                                            <segue destination="YeY-ku-07Z" kind="modal" identifier="composeSegue" id="Eui-rn-a7z"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2C7-Da-GFc">
@@ -279,6 +289,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_0.fullscreen"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
 </document>
